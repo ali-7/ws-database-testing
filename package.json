@@ -4,8 +4,9 @@
   "description": "A workshop to get familiar with testing database queries",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon src/server.js",
-    "start": "NODE_ENV=production node src/server.js"
+    "start": "NODE_ENV=production node server/index.js",
+    "dev": "NODE_ENV=development nodemon server/index.js",
+    "test": "NODE_ENV=test node tests/test.js | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -18,9 +19,13 @@
   },
   "homepage": "https://github.com/azayneeva/Database-Testing#readme",
   "dependencies": {
-    "env2": "^2.2.0",
-    "nodemon": "^1.18.7",
-    "pg": "^7.4.0",
-    "tape": "^4.8.0"
+    "env2": "^2.2.2",
+    "express": "^4.17.1",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
   }
 }
